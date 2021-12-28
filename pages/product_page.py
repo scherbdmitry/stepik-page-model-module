@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
+from .locators import BasePageLocators
 from selenium.webdriver.common.by import By
 import time
 
@@ -34,3 +35,12 @@ class ProductPage (BasePage):
         cost_product_on_product_page = self.browser.find_element(*ProductPageLocators.COST_PRODUCT_ON_PRODUCT_PAGE).text
         print(f'Message about cost basket - {message_cost_basket}', f'Product price in basket - {cost_product_in_basket}', f'Product price on product page - {cost_product_on_product_page}', sep='\n')
         assert cost_product_in_basket == cost_product_on_product_page, "cost is not equal"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_ADDED_BASKET), \
+           "Success message add to basket is presented, but should not be"
+
+
+    def should_be_message_disappeared_after_adding_product_to_basket(self):
+        assert self.is_disappeared(*ProductPageLocators.MESSAGE_ADDED_BASKET), \
+           "Success message add to basket is not presented, but should be"
