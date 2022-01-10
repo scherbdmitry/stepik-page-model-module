@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-from .locators import BasePageLocators
+#from .locators import LoginPageLocators #m
 from selenium.webdriver.common.by import By
 import time
 

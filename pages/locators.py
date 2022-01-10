@@ -4,7 +4,15 @@ from selenium.webdriver.common.by import By
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
-
+    BASKET_LINK = (By.CSS_SELECTOR, ".hidden-xs .btn-group a")
+    #BASKET_LINK = (By.XPATH, "//*[@id='default']/header/div[1]/div/div[2]/span/a")
+    #BASKET_LINK = (By.CSS_SELECTOR, "body > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
+    BASKET_EMPTY_TEXT = (By.CSS_SELECTOR, "#content_inner p")
+    BASKET_ITEM = (By.CSS_SELECTOR, "#content_inner .basket-items")
+        
+  #body > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a
+  #div .page_inner div .basket-mini.pull-right.hidden-xs span a
+  #//*[@id="default"]/header/div[1]/div/div[2]/span/a
 
 class LoginPageLocators():
     LOG_IN_EMAIL_FIELD = (By.CSS_SELECTOR, "#id_login-username")
