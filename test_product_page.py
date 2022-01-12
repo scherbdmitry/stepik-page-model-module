@@ -11,7 +11,7 @@ import pytest
 					pytest.param("7", marks=pytest.mark.xfail),
 					"8","9"])
 
-def test_guest_can_add_product_to_basket(browser, code_promo):
+def test_guest_can_add_product_to_basket_promo(browser, code_promo):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{code_promo}"
     page_product = ProductPage(browser, link)
     page_product.open()
@@ -23,7 +23,7 @@ def test_guest_can_add_product_to_basket(browser, code_promo):
     
     
 @pytest.mark.need_review
-def test_guest_can_add_product_to_basket(browser, code_promo):
+def test_guest_can_add_product_to_basket(browser):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
     page_product = ProductPage(browser, link)
     page_product.open()
@@ -81,7 +81,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
 
 link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
-@pytest.mark.userlogin
+
 class TestUserAddToBasketFromProductPage():
     
     @pytest.fixture(scope="function", autouse=True)
