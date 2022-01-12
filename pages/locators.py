@@ -7,6 +7,7 @@ class BasePageLocators():
     BASKET_LINK = (By.CSS_SELECTOR, ".hidden-xs .btn-group a")
     BASKET_ITEM = (By.CSS_SELECTOR, ".basket-title .hidden-xs")   
     BASKET_EMPTY_TEXT = (By.CSS_SELECTOR, "#content_inner >p")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
     
         
   
@@ -16,6 +17,7 @@ class LoginPageLocators():
     REGISTER_EMAIL_FIELD = (By.CSS_SELECTOR, "#id_registration-email")
     REGISTER_PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_registration-password1" )
     REGISTER_PASSWORD_CONFIRM_FIELD = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTER_SUBMIT = (By.CSS_SELECTOR, "[name = 'registration_submit")
 
 
 class MainPageLocators():
